@@ -1,9 +1,12 @@
 import S from "@sanity/desk-tool/structure-builder";
 import IframePreview from './preview/IFramePreview'
+import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 
 import {
   FiHome,
   FiCamera,
+  FiUser,
+  FiPhone,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -34,5 +37,14 @@ export default () =>
     .items([
       S.listItem().title('Home').child(S.editor().id('home').schemaType('home').documentId('singleton-home').views(getPreview('home'))).icon(FiHome),
       S.divider(),
-      S.listItem().title('Work').child(S.documentTypeList('work').title('Work')).icon(FiCamera),
+      S.listItem().title('Bio').child(S.editor().id('bio').schemaType('bio').documentId('singleton-bio').views(getPreview('bio'))).icon(FiUser),
+      S.divider(),
+      orderableDocumentListDeskItem({
+        type: 'work',
+        title: 'Works',
+        icon: FiCamera
+      }),
+      S.divider(),
+      S.listItem().title('Contact').child(S.editor().id('contact').schemaType('contact').documentId('singleton-contact').views(getPreview('contact'))).icon(FiPhone),
+      S.divider(),
     ]);

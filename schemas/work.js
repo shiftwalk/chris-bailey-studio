@@ -1,16 +1,61 @@
 import slugify from '../utils/slugify'
+import {
+  orderRankField,
+  orderRankOrdering,
+} from '@sanity/orderable-document-list';
 
 export default {
   title: "Work",
   name: 'work',
   type: "document",
   fields: [
+    orderRankField({ type: 'category', hidden: true }),
     {
       title: "Title",
-      description: "The name of this release",
+      description: "The name of this piece of work",
       name: "title",
       type: "string",
       validation: Rule => Rule.required()
+    },
+    {
+      title: "Intro Heading",
+      description: "The large heading text that introduces this piece of work",
+      name: "introHeading",
+      type: "text",
+      rows: 3,
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Intro Text",
+      description: "The text that introduces this piece of work",
+      name: "introText",
+      type: 'array', 
+      of: [{type: 'block'}],
+      validation: Rule => Rule.required()
+    },
+    {
+      title: "Services",
+      description: "The services delivered on this piece of work, eg: 'Art Direction, Visual Identity, etc...'",
+      name: "services",
+      type: 'text',
+      rows: 2
+    },
+    {
+      title: "Teaser Image",
+      description: "The image that will be displayed as a teaser for this piece of work",
+      name: "teaserImage",
+      type: "defaultImage",
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Image Blocks',
+      name: 'imageBlocks',
+      description: 'The modular image blocks for this project',
+      type: 'array',
+      of: [
+        {type: 'singleImageBlock', title: 'Single Image'},
+        {type: 'doubleImageBlock', title: 'Double Image'}
+      ],
     },
     {
       name: 'slug',

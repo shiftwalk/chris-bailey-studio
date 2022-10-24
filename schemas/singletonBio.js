@@ -1,6 +1,6 @@
 export default {
-  title: 'Home',
-  name: 'home',
+  title: 'Bio',
+  name: 'bio',
   type: 'document',
   __experimental_actions: ['update', 'create', 'delete', 'publish'],
   fields: [
@@ -11,29 +11,25 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Hero Images',
-      name: 'heroImages',
-      description: 'The hero image, if more than 1 will creaet a gif',
-      type: 'array',
-      of: [
-        {
-          name: 'image',
-          type: 'defaultImage',
-          title: 'Image',
-        },
-      ],
-      options: {
-        layout: 'grid',
-      },
+      title: 'Hero Image',
+      name: 'heroImage',
+      type: 'defaultImage',
       validation: Rule => Rule.required()
     },
     {
-      title: 'About Text',
-      name: 'aboutText',
-      type: 'text',
-      rows: 4,
+      title: 'Services',
+      name: 'aboutServices',
+      type: 'array',
+      of: [{type: 'string'}],
       validation: Rule => Rule.required()
     },
+    {
+      title: "Bio Text",
+      name: "aboutText",
+      type: 'array', 
+      of: [{type: 'block'}],
+      validation: Rule => Rule.required()
+    },    
     {
       title: 'SEO / Share Settings',
       name: 'seo',

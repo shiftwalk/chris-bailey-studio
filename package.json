@@ -1,5 +1,5 @@
 {
-  "name": "shiftwalk-sanity-starter",
+  "name": "chris-bailey-studio",
   "private": true,
   "version": "1.0.0",
   "description": "",
@@ -21,6 +21,7 @@
     "@sanity/default-layout": "^2.29.7",
     "@sanity/default-login": "^2.29.5",
     "@sanity/desk-tool": "^2.29.7",
+    "@sanity/orderable-document-list": "^0.0.10",
     "@sanity/production-preview": "^2.29.3",
     "@sanity/vision": "^2.29.5",
     "prop-types": "^15.7",

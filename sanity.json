@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "d182p2bg",
+    "dataset": "production"
+  },
   "project": {
     "name": "shiftwalk-sanity-starter"
-  },
-  "api": {
-    "projectId": "your-id-here",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
@@ -17,7 +17,7 @@
     "media",
     "@sanity/production-preview",
     "vercel-deploy",
-    "order-documents"
+    "@sanity/orderable-document-list"
   ],
   "env": {
     "development": {
