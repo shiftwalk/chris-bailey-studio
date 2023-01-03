@@ -14,6 +14,7 @@ import seo from './common/seo'
 import defaultImage from './common/defaultImage'
 import singleImageBlock from './common/singleImageBlock'
 import doubleImageBlock from './common/doubleImageBlock'
+import textBlock from './common/textBlock'
 
 export default createSchema({
   name: 'default',
@@ -26,6 +27,7 @@ export default createSchema({
     defaultImage,
     singleImageBlock,
     doubleImageBlock,
+    textBlock,
     seo
   ]),
 })

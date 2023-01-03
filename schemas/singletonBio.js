@@ -17,10 +17,9 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Services',
-      name: 'aboutServices',
-      type: 'array',
-      of: [{type: 'string'}],
+      title: 'Hero Image (Mobile)',
+      name: 'heroImageMobile',
+      type: 'defaultImage',
       validation: Rule => Rule.required()
     },
     {
@@ -29,7 +28,38 @@ export default {
       type: 'array', 
       of: [{type: 'block'}],
       validation: Rule => Rule.required()
+    },
+    {
+      title: 'Services',
+      name: 'aboutServices',
+      type: 'array',
+      of: [{type: 'string'}],
+      validation: Rule => Rule.required()
     },    
+    {
+      title: 'Awards',
+      name: 'awards',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          {
+            title: 'Location',
+            name: 'location',
+            type: 'string',
+            description: 'The location of this awards, eg: "Awwwards"',
+            validation: Rule => Rule.required()
+          },
+          {
+            title: 'Title',
+            name: 'title',
+            type: 'string',
+            description: 'The title of this awards, eg: "Site Of The Day"',
+            validation: Rule => Rule.required()
+          }
+        ],
+      }],
+    },
     {
       title: 'SEO / Share Settings',
       name: 'seo',

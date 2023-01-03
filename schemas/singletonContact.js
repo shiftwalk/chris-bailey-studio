@@ -29,10 +29,16 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Booking Availability Override',
-      name: 'bookingAvailabilityOverride',
+      title: 'Behance',
+      name: 'behance',
       type: 'string',
-      description: 'Filling this out will override the automated "BOOKING FOR Q3" message which will default to the current *next* quarter',
+      validation: Rule => Rule.required()
+    },
+    {
+      title: 'Dribbble',
+      name: 'dribbble',
+      type: 'string',
+      validation: Rule => Rule.required()
     },
   ],
   preview: {

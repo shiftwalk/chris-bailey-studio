@@ -18,31 +18,22 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: "Intro Heading",
-      description: "The large heading text that introduces this piece of work",
-      name: "introHeading",
-      type: "text",
-      rows: 3,
+      title: "Year",
+      name: "year",
+      type: "string",
       validation: Rule => Rule.required()
     },
-    {
-      title: "Intro Text",
-      description: "The text that introduces this piece of work",
-      name: "introText",
-      type: 'array', 
-      of: [{type: 'block'}],
-      validation: Rule => Rule.required()
-    },
+    
     {
       title: "Services",
       description: "The services delivered on this piece of work, eg: 'Art Direction, Visual Identity, etc...'",
       name: "services",
-      type: 'text',
-      rows: 2
+      type: 'array',
+      of: [{type: 'string'}]
     },
     {
-      title: "Teaser Image",
-      description: "The image that will be displayed as a teaser for this piece of work",
+      title: "Main Image",
+      description: "The image that will be displayed first on this piece of work",
       name: "teaserImage",
       type: "defaultImage",
       validation: Rule => Rule.required()
@@ -53,6 +44,7 @@ export default {
       description: 'The modular image blocks for this project',
       type: 'array',
       of: [
+        {type: 'textBlock', title: 'Text Block'},
         {type: 'singleImageBlock', title: 'Single Image'},
         {type: 'doubleImageBlock', title: 'Double Image'}
       ],
