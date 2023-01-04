@@ -35,8 +35,8 @@ export default () =>
   S.list()
     .title("Content")
     .items([
-      S.listItem().title('Home').child(S.editor().id('home').schemaType('home').documentId('singleton-home').views(getPreview('home'))).icon(FiHome),
-      S.divider(),
+      // S.listItem().title('Home').child(S.editor().id('home').schemaType('home').documentId('singleton-home').views(getPreview('home'))).icon(FiHome),
+      // S.divider(),
       S.listItem().title('Bio').child(S.editor().id('bio').schemaType('bio').documentId('singleton-bio').views(getPreview('bio'))).icon(FiUser),
       S.divider(),
       orderableDocumentListDeskItem({
