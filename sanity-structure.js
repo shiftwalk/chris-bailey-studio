@@ -7,6 +7,7 @@ import {
   FiCamera,
   FiUser,
   FiPhone,
+  FiDroplet,
 } from 'react-icons/fi'
 
 import { getGlobalSlug, previewURL } from './utils/resolveProductionUrl'
@@ -47,4 +48,5 @@ export default () =>
       S.divider(),
       S.listItem().title('Contact').child(S.editor().id('contact').schemaType('contact').documentId('singleton-contact').views(getPreview('contact'))).icon(FiPhone),
       S.divider(),
+      S.listItem().title('Colors').child(S.editor().id('colors').schemaType('colors').documentId('singleton-colors').views(getPreview('colors'))).icon(FiDroplet)
     ]);

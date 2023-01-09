@@ -17,28 +17,27 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      title: 'Instagram',
-      name: 'instagram',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      title: 'LinkedIn',
-      name: 'linkedIn',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      title: 'Behance',
-      name: 'behance',
-      type: 'string',
-      validation: Rule => Rule.required()
-    },
-    {
-      title: 'Dribbble',
-      name: 'dribbble',
-      type: 'string',
-      validation: Rule => Rule.required()
+      title: 'Socials',
+      name: 'socials',
+      type: 'array',
+      of: [{
+        type: 'object',
+        fields: [
+          {
+            title: 'Name',
+            name: 'name',
+            type: 'string',
+            description: 'eg: "Instagram" or "Behance"',
+            validation: Rule => Rule.required()
+          },
+          {
+            title: 'URL',
+            name: 'url',
+            type: 'url',
+            validation: Rule => Rule.required()
+          }
+        ],
+      }],
     },
   ],
   preview: {

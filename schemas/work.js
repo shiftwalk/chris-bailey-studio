@@ -32,10 +32,20 @@ export default {
       of: [{type: 'string'}]
     },
     {
-      title: "Main Image",
+      title: "Main Image(s)",
       description: "The image that will be displayed first on this piece of work",
-      name: "teaserImage",
-      type: "defaultImage",
+      name: "teaserImages",
+      type: 'array',
+      of: [
+        {
+          name: 'image',
+          type: 'defaultImage',
+          title: 'Image',
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
       validation: Rule => Rule.required()
     },
     {
@@ -86,8 +96,15 @@ export default {
   preview: {
     select: {
       title: 'title',
-      subtitle: 'campaignTitle',
-      media: 'teaserImage'
+      year: 'year',
+      teaserImages: 'teaserImages'
+    },
+    prepare ({ title, year, teaserImages }) {
+      return {
+        title: title,
+        subtitle: year,
+        media: teaserImages[0]
+      }
     }
   }
 }

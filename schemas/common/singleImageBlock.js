@@ -7,21 +7,31 @@ export default {
   icon: FiCamera,
   fields: [
     {
-      title: 'Image',
-      name: 'image',
-      type: 'defaultImage',
+      title: 'Images',
+      name: 'images',
+      type: 'array',
+      of: [
+        {
+          name: 'image',
+          type: 'defaultImage',
+          title: 'Image',
+        },
+      ],
+      options: {
+        layout: 'grid',
+      },
       validation: Rule => Rule.required()
     }
   ],
   preview: {
     select: {
-      image: 'image'
+      images: 'images'
     },
     prepare(selection) {
-      const {image} = selection
+      const {images} = selection
       return {
         title: 'Single Image',
-        media: image
+        media: images[0]
       }
     }
   }
